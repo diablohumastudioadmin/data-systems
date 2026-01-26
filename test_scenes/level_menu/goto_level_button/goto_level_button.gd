@@ -11,6 +11,7 @@ extends Button
 func _ready() -> void:
 	if Engine.is_editor_hint(): pressed.connect(_on_pressed)
 	if level:
+		name = level.name
 		_set_visuals()
 
 func _set_visuals():

@@ -15,7 +15,6 @@ func populate_goto_level_buttons_container():
 	for level in levelDB:
 		var new_goto_level_button: GotoLevelButton = goto_level_button_pksc.instantiate()
 		new_goto_level_button.level = level
-		new_goto_level_button.name = level.name
 		%GotoLevelButtonsContainer.add_child(new_goto_level_button)
 		if Engine.is_editor_hint():
 			new_goto_level_button.owner = self
