@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AchievementData" load_steps=2 format=3 uid="uid://cm5vxjva5bye0"]
+
+[ext_resource type="Script" uid="uid://77cywx5ply08" path="res://data_system/achievement/model/achievement.gd" id="1_fgtux"]
+
+[resource]
+script = ExtResource("1_fgtux")
+id = 1
+name = "Pass 1 level"
+metadata/_custom_type_script = "uid://77cywx5ply08"

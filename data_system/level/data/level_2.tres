@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://blm6abdjbh2xr"]
+
+[ext_resource type="Script" uid="uid://bicrkvxmrpbbw" path="res://data_system/level/model/level_data.gd" id="1_3meu0"]
+
+[resource]
+script = ExtResource("1_3meu0")
+id = 2
+name = "New York"
+game_backgound_color = Color(0.9502396, 0.53133416, 0.54398, 1)
+metadata/_custom_type_script = "uid://bicrkvxmrpbbw"

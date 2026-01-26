@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelDB" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://data_system/level/model/level_data.gd" id="1_pv75d"]
+[ext_resource type="Resource" path="res://data_system/level/data/level_1.tres" id="2_ku687"]
+[ext_resource type="Resource" path="res://data_system/level/data/level_2.tres" id="3_b8r4t"]
+[ext_resource type="Resource" path="res://data_system/level/data/level_3.tres" id="4_1kfmf"]
+[ext_resource type="Resource" path="res://data_system/level/data/level_4.tres" id="5_wvjlh"]
+[ext_resource type="Resource" path="res://data_system/level/data/level_5.tres" id="6_r0qnb"]
+[ext_resource type="Script" path="res://data_system/level/levelDB/levelDB.gd" id="7_grbys"]
+
+[resource]
+script = ExtResource("7_grbys")
+levels = Array[ExtResource("1_pv75d")]([ExtResource("2_ku687"), ExtResource("3_b8r4t"), ExtResource("4_1kfmf"), ExtResource("5_wvjlh"), ExtResource("6_r0qnb")])

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://b2rcqkitu74ti"]
+
+[ext_resource type="Script" uid="uid://bicrkvxmrpbbw" path="res://data_system/level/model/level_data.gd" id="1_di2fp"]
+
+[resource]
+script = ExtResource("1_di2fp")
+id = 5
+name = "Level 5"
+game_backgound_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+metadata/_custom_type_script = "uid://bicrkvxmrpbbw"
