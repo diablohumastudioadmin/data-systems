@@ -7,6 +7,9 @@ var levelDB: Array[LevelData] = load("res://data_system/level/levelDB/levelDB.tr
 var goto_level_button_pksc: PackedScene = preload("uid://e5hlu5j1y33s")
 
 func _ready() -> void:
+	populate_goto_level_buttons_container()
+
+func populate_goto_level_buttons_container():
 	for child:GotoLevelButton in %GotoLevelButtonsContainer.get_children():
 		child.free()
 	for level in levelDB:
