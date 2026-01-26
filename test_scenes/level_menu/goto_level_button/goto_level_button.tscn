@@ -12,5 +12,3 @@ theme = ExtResource("1_rtcp0")
 text = "Goto Quito Level"
 script = ExtResource("2_8p526")
 level = ExtResource("3_cxx0g")
-
-[connection signal="pressed" from="." to="." method="_on_pressed"]

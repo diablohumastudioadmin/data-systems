@@ -9,6 +9,7 @@ extends Button
 			_set_visuals()
 
 func _ready() -> void:
+	if Engine.is_editor_hint(): pressed.connect(_on_pressed)
 	if level:
 		_set_visuals()
 
