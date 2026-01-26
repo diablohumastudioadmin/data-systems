@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneManagerSystem="*res://scene_manager_system/scene_manager_system.gd"
-DataSystem="*res://data_system/data_system.gd"
+MasterDBCreatorSingleton="*res://addons/diablo_huma_studio/singletons/masterDB_creator_singleton.gd"
 
 [display]
 
