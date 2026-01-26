@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgvpqapubyxx4"]
+
+[ext_resource type="Script" uid="uid://cfglib3byrstv" path="res://test_scenes/achievements_menu/achievements_menu.gd" id="1_ksqd7"]
+[ext_resource type="Theme" uid="uid://ddwm0nvjciyk4" path="res://assets/global_theme.tres" id="1_xi3c6"]
+[ext_resource type="PackedScene" uid="uid://u1r7eyb38s4c" path="res://test_scenes/achievements_menu/achievement_presenter/achievement_presenter.tscn" id="3_rhnm3"]
+[ext_resource type="Resource" uid="uid://cm5vxjva5bye0" path="res://data_system/achievement/data/achevement_1.tres" id="4_851lo"]
+[ext_resource type="Resource" uid="uid://x3k4krqlo0w3" path="res://data_system/achievement/data/achevement_2.tres" id="5_7uno4"]
+[ext_resource type="Resource" uid="uid://c6jlssa4ni5bp" path="res://data_system/achievement/data/achevement_3.tres" id="6_4qyfg"]
+
+[node name="AchievementsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xi3c6")
+script = ExtResource("1_ksqd7")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 345.0
+offset_right = 823.0
+offset_bottom = 569.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="AchievementPresenter" parent="CenterContainer/VBoxContainer" instance=ExtResource("3_rhnm3")]
+layout_mode = 2
+achievement = ExtResource("4_851lo")
+
+[node name="AchievementPresenter2" parent="CenterContainer/VBoxContainer" instance=ExtResource("3_rhnm3")]
+layout_mode = 2
+achievement = ExtResource("5_7uno4")
+
+[node name="AchievementPresenter3" parent="CenterContainer/VBoxContainer" instance=ExtResource("3_rhnm3")]
+layout_mode = 2
+achievement = ExtResource("6_4qyfg")
+
+[node name="GotoMainManuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1516.0
+offset_top = 891.0
+offset_right = 1719.0
+offset_bottom = 968.0
+text = "Go Back"
+
+[connection signal="pressed" from="GotoMainManuButton" to="." method="_on_goto_main_manu_button_pressed"]

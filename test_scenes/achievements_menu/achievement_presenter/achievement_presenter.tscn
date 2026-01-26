@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://u1r7eyb38s4c"]
+
+[ext_resource type="Theme" uid="uid://ddwm0nvjciyk4" path="res://assets/global_theme.tres" id="1_a4cwc"]
+[ext_resource type="Script" uid="uid://bpche6cjolr1p" path="res://test_scenes/achievements_menu/achievement_presenter/achievement_presenter.gd" id="2_htx0p"]
+
+[sub_resource type="DPITexture" id="DPITexture_xi3c6"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+base_scale = 4.0
+
+[sub_resource type="DPITexture" id="DPITexture_rhnm3"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 4.0
+
+[node name="AchievementPresenter" type="HBoxContainer"]
+theme = ExtResource("1_a4cwc")
+script = ExtResource("2_htx0p")
+
+[node name="Name" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Placeholder Achievement"
+
+[node name="Achieved" type="CheckButton" parent="."]
+layout_mode = 2
+theme_override_icons/checked = SubResource("DPITexture_xi3c6")
+theme_override_icons/unchecked = SubResource("DPITexture_rhnm3")

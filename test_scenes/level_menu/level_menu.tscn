@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwiqpoedqo816"]
+
+[ext_resource type="Theme" uid="uid://ddwm0nvjciyk4" path="res://assets/global_theme.tres" id="1_12tlg"]
+[ext_resource type="Script" uid="uid://dhy73htdp5mqw" path="res://test_scenes/level_menu/level_menu.gd" id="2_dm16c"]
+[ext_resource type="PackedScene" uid="uid://e5hlu5j1y33s" path="res://test_scenes/level_menu/goto_level_button/goto_level_button.tscn" id="3_wee5n"]
+[ext_resource type="Script" uid="uid://dpfycfmexihe0" path="res://test_scenes/level_menu/goto_level_button/goto_level_button.gd" id="4_nqyph"]
+[ext_resource type="Resource" uid="uid://ckta8aeop0t38" path="res://data_system/level/data/level_1.tres" id="5_yhmoj"]
+[ext_resource type="Resource" uid="uid://blm6abdjbh2xr" path="res://data_system/level/data/level_2.tres" id="6_vnpil"]
+[ext_resource type="Resource" uid="uid://djfedsl0ad6kh" path="res://data_system/level/data/level_3.tres" id="7_4u6ia"]
+[ext_resource type="Resource" uid="uid://dt87lrtp7jh70" path="res://data_system/level/data/level_4.tres" id="8_7cmdt"]
+[ext_resource type="Resource" uid="uid://b2rcqkitu74ti" path="res://data_system/level/data/level_5.tres" id="9_1ukfm"]
+
+[node name="LevelMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_12tlg")
+script = ExtResource("2_dm16c")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_right = 701.0
+grow_vertical = 2
+
+[node name="GotoLevelButtonsContainer" type="VBoxContainer" parent="CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Hawai" type="Button" parent="CenterContainer/GotoLevelButtonsContainer" instance=ExtResource("3_wee5n")]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme = ExtResource("1_12tlg")
+text = "Goto Hawai Level"
+script = ExtResource("4_nqyph")
+level = ExtResource("5_yhmoj")
+
+[node name="New York" type="Button" parent="CenterContainer/GotoLevelButtonsContainer" instance=ExtResource("3_wee5n")]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme = ExtResource("1_12tlg")
+text = "Goto New York Level"
+script = ExtResource("4_nqyph")
+level = ExtResource("6_vnpil")
+
+[node name="Quito" type="Button" parent="CenterContainer/GotoLevelButtonsContainer" instance=ExtResource("3_wee5n")]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme = ExtResource("1_12tlg")
+text = "Goto Quito Level"
+script = ExtResource("4_nqyph")
+level = ExtResource("7_4u6ia")
+
+[node name="Outter Space" type="Button" parent="CenterContainer/GotoLevelButtonsContainer" instance=ExtResource("3_wee5n")]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme = ExtResource("1_12tlg")
+text = "Goto Outter Space Level"
+script = ExtResource("4_nqyph")
+level = ExtResource("8_7cmdt")
+
+[node name="Level 5" type="Button" parent="CenterContainer/GotoLevelButtonsContainer" instance=ExtResource("3_wee5n")]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme = ExtResource("1_12tlg")
+text = "Goto Level 5 Level"
+script = ExtResource("4_nqyph")
+level = ExtResource("9_1ukfm")
+
+[node name="GoToMainMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1594.0
+offset_top = 882.0
+offset_right = 1797.0
+offset_bottom = 959.0
+text = "Go Back"
+
+[connection signal="pressed" from="CenterContainer/GotoLevelButtonsContainer/Hawai" to="CenterContainer/GotoLevelButtonsContainer/Hawai" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/GotoLevelButtonsContainer/New York" to="CenterContainer/GotoLevelButtonsContainer/New York" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/GotoLevelButtonsContainer/Quito" to="CenterContainer/GotoLevelButtonsContainer/Quito" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/GotoLevelButtonsContainer/Outter Space" to="CenterContainer/GotoLevelButtonsContainer/Outter Space" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/GotoLevelButtonsContainer/Level 5" to="CenterContainer/GotoLevelButtonsContainer/Level 5" method="_on_pressed"]
+[connection signal="pressed" from="GoToMainMenuButton" to="." method="_on_go_to_main_menu_button_pressed"]

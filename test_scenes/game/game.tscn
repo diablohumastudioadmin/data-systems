@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp3kdinar0j78"]
+
+[ext_resource type="Theme" uid="uid://ddwm0nvjciyk4" path="res://assets/global_theme.tres" id="1_nti61"]
+[ext_resource type="Script" uid="uid://djr5nk65744ty" path="res://test_scenes/game/game.gd" id="1_oimob"]
+[ext_resource type="Resource" uid="uid://blm6abdjbh2xr" path="res://data_system/level/data/level_2.tres" id="2_k0moy"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nti61")
+script = ExtResource("1_oimob")
+level = ExtResource("2_k0moy")
+
+[node name="BackgroundColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9502396, 0.53133416, 0.54398, 1)
+
+[node name="ReturnButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 942.0
+offset_right = 582.0
+offset_bottom = 1019.0
+text = "Return to Level Menu"
+
+[node name="Title" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 729.0
+offset_top = 47.0
+offset_right = 1014.0
+offset_bottom = 116.0
+text = "New York"
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

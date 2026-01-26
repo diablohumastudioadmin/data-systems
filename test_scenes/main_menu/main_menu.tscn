@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8yuiden1ryt7"]
+
+[ext_resource type="Theme" uid="uid://ddwm0nvjciyk4" path="res://assets/global_theme.tres" id="1_0ggkp"]
+[ext_resource type="Script" uid="uid://d032gnpkv4alh" path="res://test_scenes/main_menu/main_menu.gd" id="1_7jk3l"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0ggkp")
+script = ExtResource("1_7jk3l")
+
+[node name="GotoLevelsMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 254.0
+offset_right = 741.0
+offset_bottom = 331.0
+text = "Go to Levels Menu"
+
+[node name="GotoAchievementsMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 627.0
+offset_right = 747.0
+offset_bottom = 704.0
+text = "Go to Achievements Menu"
+
+[connection signal="pressed" from="GotoLevelsMenuButton" to="." method="_on_goto_levels_menu_button_pressed"]
+[connection signal="pressed" from="GotoAchievementsMenuButton" to="." method="_on_goto_achievements_menu_button_pressed"]
