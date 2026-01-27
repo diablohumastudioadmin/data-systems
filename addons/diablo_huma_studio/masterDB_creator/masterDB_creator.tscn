@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvf42gydx8g0q"]
-
-[ext_resource type="Script" uid="uid://dlm5m6dggh7sv" path="res://addons/diablo_huma_studio/masterDB_creator/masterDB_creator.gd" id="1_psyc8"]
-
-[node name="MasterDbCreator" type="Node"]
-script = ExtResource("1_psyc8")

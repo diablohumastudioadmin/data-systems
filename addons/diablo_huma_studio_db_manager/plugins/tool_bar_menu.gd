@@ -7,6 +7,6 @@ func _enter_tree() -> void:
 
 func _on_id_pressed(id_: int):
 	if id_ == 0:
-		var masterDB_creator: MasterDBCreator = load("res://addons/diablo_huma_studio/masterDB_creator/masterDB_creator.tscn").instantiate()
+		var masterDB_creator: DBMAnager = load("uid://dvf42gydx8g0q").instantiate()
 		masterDB_creator.create_level_db()
 		masterDB_creator.create_achivements_db()

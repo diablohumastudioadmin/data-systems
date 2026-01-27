@@ -1,5 +1,5 @@
 @tool
-class_name MasterDBCreator
+class_name DBMAnager
 extends Node
 
 func create_level_db():
