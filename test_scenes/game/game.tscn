@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ddwm0nvjciyk4" path="res://assets/global_theme.tres" id="1_nti61"]
 [ext_resource type="Script" uid="uid://djr5nk65744ty" path="res://test_scenes/game/game.gd" id="1_oimob"]
-[ext_resource type="Resource" uid="uid://blm6abdjbh2xr" path="res://data_system/level/data/level_2.tres" id="2_k0moy"]
+[ext_resource type="Resource" uid="uid://blm6abdjbh2xr" path="res://DHS/level/data/level_2.tres" id="2_k0moy"]
 
 [node name="Game" type="Control"]
 layout_mode = 3

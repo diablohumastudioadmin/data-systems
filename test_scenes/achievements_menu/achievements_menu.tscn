@@ -1,19 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgvpqapubyxx4"]
+[gd_scene load_steps=3 format=3 uid="uid://dgvpqapubyxx4"]
 
 [ext_resource type="Script" uid="uid://cfglib3byrstv" path="res://test_scenes/achievements_menu/achievements_menu.gd" id="1_ksqd7"]
 [ext_resource type="Theme" uid="uid://ddwm0nvjciyk4" path="res://assets/global_theme.tres" id="1_xi3c6"]
-[ext_resource type="PackedScene" uid="uid://u1r7eyb38s4c" path="res://test_scenes/achievements_menu/achievement_presenter/achievement_presenter.tscn" id="3_4qyfg"]
-[ext_resource type="Script" uid="uid://bpche6cjolr1p" path="res://test_scenes/achievements_menu/achievement_presenter/achievement_presenter.gd" id="4_hsg0w"]
-[ext_resource type="Resource" uid="uid://cm5vxjva5bye0" path="res://data_system/achievement/data/achevement_1.tres" id="5_me547"]
-[ext_resource type="Resource" uid="uid://x3k4krqlo0w3" path="res://data_system/achievement/data/achevement_2.tres" id="6_5te7l"]
-[ext_resource type="Resource" uid="uid://c6jlssa4ni5bp" path="res://data_system/achievement/data/achevement_3.tres" id="7_ark4d"]
-[ext_resource type="Script" uid="uid://77cywx5ply08" path="res://data_system/achievement/model/achievement.gd" id="8_4qyfg"]
-
-[sub_resource type="Resource" id="Resource_hsg0w"]
-script = ExtResource("8_4qyfg")
-id = 1
-name = "Pass 1 level"
-metadata/_custom_type_script = "uid://77cywx5ply08"
 
 [node name="AchievementsMenu" type="Control"]
 layout_mode = 3
@@ -35,30 +23,6 @@ offset_bottom = 569.0
 [node name="AchievementPresentersContainer" type="VBoxContainer" parent="CenterContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="Pass 1 level" type="HBoxContainer" parent="CenterContainer/AchievementPresentersContainer" instance=ExtResource("3_4qyfg")]
-layout_mode = 2
-theme = ExtResource("1_xi3c6")
-script = ExtResource("4_hsg0w")
-achievement = ExtResource("5_me547")
-
-[node name="Pass 2 levels (1 and 2)" type="HBoxContainer" parent="CenterContainer/AchievementPresentersContainer" instance=ExtResource("3_4qyfg")]
-layout_mode = 2
-theme = ExtResource("1_xi3c6")
-script = ExtResource("4_hsg0w")
-achievement = ExtResource("6_5te7l")
-
-[node name="Kill 5 enemies" type="HBoxContainer" parent="CenterContainer/AchievementPresentersContainer" instance=ExtResource("3_4qyfg")]
-layout_mode = 2
-theme = ExtResource("1_xi3c6")
-script = ExtResource("4_hsg0w")
-achievement = ExtResource("7_ark4d")
-
-[node name="Pass 1 level2" type="HBoxContainer" parent="CenterContainer/AchievementPresentersContainer" instance=ExtResource("3_4qyfg")]
-layout_mode = 2
-theme = ExtResource("1_xi3c6")
-script = ExtResource("4_hsg0w")
-achievement = SubResource("Resource_hsg0w")
 
 [node name="GotoMainManuButton" type="Button" parent="."]
 layout_mode = 0
