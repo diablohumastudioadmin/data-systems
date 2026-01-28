@@ -62,7 +62,7 @@ func _on_add_data_type_button_pressed() -> void:
 	_validate_all_properties()
 	if not errors.is_empty():
 		return
-	var result: int = DataTypeScriptGenerator.save(get_data_type_name().strip_edges(), get_properties())
+	var result: Error = DataTypeGenerator.generate(get_data_type_name().strip_edges(), get_properties())
 	if result != OK:
 		errors.append("Failed to save file (error code: %d)" % result)
 		_update_errors_display()
