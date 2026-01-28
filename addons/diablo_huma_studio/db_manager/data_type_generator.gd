@@ -2,7 +2,7 @@ class_name DataTypeGenerator
 extends RefCounted
 
 static func generate(type_name: String, properties: Array[Dictionary]) -> Error:
-	var err: Error = _generate_file(type_name, properties)
+	var err: Error = _generate_data_type_file(type_name, properties)
 	if err != OK: return err
 	err = _generate_data_folder(type_name)
 	if err != OK: return err
@@ -18,7 +18,7 @@ static func _generate_data_folder(type_name: String) -> Error:
 
 	return OK
 
-static func _generate_dt_script_text(type_name: String, properties: Array[Dictionary]) -> String:
+static func _generate_data_type_script_text(type_name: String, properties: Array[Dictionary]) -> String:
 	var script_text: String = ""
 	script_text += "class_name " + type_name + "\n"
 	script_text += "extends DataType\n"
@@ -30,16 +30,16 @@ static func _generate_dt_script_text(type_name: String, properties: Array[Dictio
 
 	return script_text
 
-static func _generate_file(type_name: String, properties: Array[Dictionary]) -> Error:
-	var script_text: String = _generate_dt_script_text(type_name, properties)
+static func _generate_data_type_file(type_name: String, properties: Array[Dictionary]) -> Error:
+	var script_text: String = _generate_data_type_script_text(type_name, properties)
 	var path: String = _get_data_types_path()
 	var file_name: String = _to_snake_case(type_name) + ".gd"
+	if ResourceLoader.exists(path + file_name): return Error.ERR_ALREADY_EXISTS
 	var file := FileAccess.open(path + file_name, FileAccess.WRITE)
 	if file == null:
 		return FileAccess.get_open_error()
 	file.store_string(script_text)
 	file.close()
-
 	if Engine.is_editor_hint():
 		EditorInterface.get_resource_filesystem().scan()
 
