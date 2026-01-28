@@ -7,6 +7,8 @@ const PLUGIN_FOLDER_NAME: String = "db_manager/"
 const DATA_TYPES_FOLDER_NAME: String = "data_types/"
 const DATA_FOLDER_NAME: String = "data/"
 
+const DATA_TYPE_CLASS_PATH: String = "uid://dei5nvlls4n7f"
+
 func _ready() -> void:
 	create_data_types_folder()
 
