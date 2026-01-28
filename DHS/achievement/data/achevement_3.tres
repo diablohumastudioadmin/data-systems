@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="AchievementData" load_steps=2 format=3 uid="uid://c6jlssa4ni5bp"]
-
-[ext_resource type="Script" uid="uid://77cywx5ply08" path="res://DHS/achievement/model/achievement.gd" id="1_gqvls"]
-
-[resource]
-script = ExtResource("1_gqvls")
-id = 3
-name = "Kill 5 enemies"
-metadata/_custom_type_script = "uid://77cywx5ply08"

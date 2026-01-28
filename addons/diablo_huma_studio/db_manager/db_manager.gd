@@ -1,8 +1,8 @@
 @tool
 extends Node
 
-const BRAND_PATH: String = "res://DHS/"
-const MANAGER_DATA_FOLDER: String = "db_manager_data/"
+const BRAND_PATH: String = "res://diablo_huma_studio/"
+const PLUGIN_FOLDER_NAME: String = "db_manager/"
 const DATA_TYPES_FOLDER_NAME: String = "data_types/"
 const DATA_FOLDER_NAME: String = "data/"
 
@@ -14,17 +14,17 @@ func _on_editor_fs_fs_changed():
 	print("fs changed")
 
 func create_data_types_folder():
-	if not DirAccess.dir_exists_absolute(BRAND_PATH + MANAGER_DATA_FOLDER + DATA_TYPES_FOLDER_NAME):
-		DirAccess.make_dir_recursive_absolute(BRAND_PATH + MANAGER_DATA_FOLDER + DATA_TYPES_FOLDER_NAME)
-	if not DirAccess.dir_exists_absolute(BRAND_PATH + MANAGER_DATA_FOLDER + DATA_FOLDER_NAME):
-		DirAccess.make_dir_recursive_absolute(BRAND_PATH + MANAGER_DATA_FOLDER + DATA_FOLDER_NAME)
+	if not DirAccess.dir_exists_absolute(BRAND_PATH + PLUGIN_FOLDER_NAME + DATA_FOLDER_NAME):
+		DirAccess.make_dir_recursive_absolute(BRAND_PATH + PLUGIN_FOLDER_NAME + DATA_FOLDER_NAME)
+	if not DirAccess.dir_exists_absolute(BRAND_PATH + PLUGIN_FOLDER_NAME + DATA_TYPES_FOLDER_NAME):
+		DirAccess.make_dir_recursive_absolute(BRAND_PATH + PLUGIN_FOLDER_NAME + DATA_TYPES_FOLDER_NAME)
 	if Engine.is_editor_hint():
 		var fs := EditorInterface.get_resource_filesystem()
 		if fs.is_scanning(): fs.filesystem_changed.connect(fs.scan, CONNECT_ONE_SHOT)
 		else: fs.scan()
 
 func create_tables():
-	var dir = DirAccess.open(BRAND_PATH + MANAGER_DATA_FOLDER + DATA_TYPES_FOLDER_NAME)
+	var dir = DirAccess.open(BRAND_PATH + PLUGIN_FOLDER_NAME + DATA_FOLDER_NAME)
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	while file_name != "":
