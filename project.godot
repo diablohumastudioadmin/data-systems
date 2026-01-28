@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneManagerSystem="*res://scene_manager_system/scene_manager_system.gd"
-StandAloneDBCreator="*res://addons/diablo_huma_studio_db_manager/plugins/standalone_singleton.gd"
-DBManager="*res://addons/diablo_huma_studio_db_manager/db_manager.tscn"
+StandAloneDBCreator="*res://addons/diablo_huma_studio/db_manager/plugins/standalone_singleton.gd"
+DBManager="*res://addons/diablo_huma_studio/db_manager/db_manager.tscn"
 
 [display]
 
@@ -31,7 +31,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/diablo_huma_studio_db_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/diablo_huma_studio/db_manager/plugin.cfg", "res://addons/diablo_huma_studio_db_manager/plugin.cfg", "res://addons/diablohumastudio/db_manager/plugin.cfg")
 
 [physics]
 

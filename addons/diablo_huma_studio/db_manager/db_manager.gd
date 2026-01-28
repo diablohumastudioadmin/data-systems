@@ -1,8 +1,42 @@
 @tool
-class_name DBMAnager
 extends Node
 
+const BRAND_PATH: String = "res://DHS/"
+const MANAGER_DATA_FOLDER: String = "db_manager_data/"
+const DATA_TYPES_FOLDER_NAME: String = "data_types/"
+const DATA_FOLDER_NAME: String = "data/"
+
+func _ready() -> void:
+	create_data_types_folder()
+	EditorInterface.get_resource_filesystem().filesystem_changed.connect(_on_editor_fs_fs_changed)
+
+func _on_editor_fs_fs_changed():
+	print("fs changed")
+
+func create_data_types_folder():
+	if not DirAccess.dir_exists_absolute(BRAND_PATH + MANAGER_DATA_FOLDER + DATA_TYPES_FOLDER_NAME):
+		DirAccess.make_dir_recursive_absolute(BRAND_PATH + MANAGER_DATA_FOLDER + DATA_TYPES_FOLDER_NAME)
+	if not DirAccess.dir_exists_absolute(BRAND_PATH + MANAGER_DATA_FOLDER + DATA_FOLDER_NAME):
+		DirAccess.make_dir_recursive_absolute(BRAND_PATH + MANAGER_DATA_FOLDER + DATA_FOLDER_NAME)
+	if Engine.is_editor_hint():
+		var fs := EditorInterface.get_resource_filesystem()
+		if fs.is_scanning(): fs.filesystem_changed.connect(fs.scan, CONNECT_ONE_SHOT)
+		else: fs.scan()
+
+func create_tables():
+	var dir = DirAccess.open(BRAND_PATH + MANAGER_DATA_FOLDER + DATA_TYPES_FOLDER_NAME)
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+	while file_name != "":
+		if !dir.current_is_dir():
+			print("Found file: " + file_name)
+		file_name = dir.get_next()
+
+func create_table():
+	pass
+
 func create_level_db():
+	return
 	var new_level_db: LevelDB = LevelDB.new()
 	new_level_db.levels = get_all_level_data_files()
 	ResourceSaver.save(new_level_db, "res://data_system/level/levelDB/levelDB.tres")
@@ -11,6 +45,7 @@ func create_level_db():
 	print("levelDB created and saved in res://data_system/level/levelDB/levelDB.tres")
 
 func create_achivements_db():
+	return
 	var new_ahievement_db: AchievementDB = AchievementDB.new()
 	new_ahievement_db.achievements = get_all_achievement_data_files()
 	ResourceSaver.save(new_ahievement_db, "res://data_system/achievement/achievementDB/achievementDB.tres")

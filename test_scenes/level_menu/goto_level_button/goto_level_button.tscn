@@ -2,9 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://ddwm0nvjciyk4" path="res://assets/global_theme.tres" id="1_rtcp0"]
 [ext_resource type="Script" uid="uid://dpfycfmexihe0" path="res://test_scenes/level_menu/goto_level_button/goto_level_button.gd" id="2_8p526"]
-[ext_resource type="Resource" uid="uid://djfedsl0ad6kh" path="res://data_system/level/data/level_3.tres" id="3_cxx0g"]
+[ext_resource type="Resource" uid="uid://djfedsl0ad6kh" path="res://DHS/level/data/level_3.tres" id="3_cxx0g"]
 
-[node name="GotoLevelButton" type="Button"]
+[node name="Quito" type="Button"]
 custom_minimum_size = Vector2(0, 130)
 offset_right = 426.0
 offset_bottom = 77.0
