@@ -18,8 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneManagerSystem="*res://scene_manager_system/scene_manager_system.gd"
-StandAloneDBCreator="*res://addons/diablo_huma_studio/db_manager/plugins/standalone_singleton.gd"
-DBManager="*res://addons/diablo_huma_studio/db_manager/db_manager.tscn"
+StandAloneDBCreator="*uid://y7xt2blhe5nu"
 
 [display]
 

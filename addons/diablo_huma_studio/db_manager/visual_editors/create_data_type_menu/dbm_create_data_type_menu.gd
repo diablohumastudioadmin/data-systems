@@ -1,0 +1,2 @@
+class_name DBMCreateDataTypeMenu
+extends Control

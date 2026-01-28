@@ -1,5 +1,6 @@
 @tool
-extends Node
+class_name DBManagerWindow
+extends Window
 
 const BRAND_PATH: String = "res://diablo_huma_studio/"
 const PLUGIN_FOLDER_NAME: String = "db_manager/"
@@ -72,3 +73,7 @@ func create_table():
 		#if achievement_ is AchievementData:
 			#achievement_array.append(achievement_)
 	#return achievement_array
+
+
+func _on_close_requested() -> void:
+	queue_free()
