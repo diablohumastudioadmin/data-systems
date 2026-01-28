@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgvpqapubyxx4"]
+[gd_scene format=3 uid="uid://dgvpqapubyxx4"]
 
 [ext_resource type="Script" uid="uid://cfglib3byrstv" path="res://test_scenes/achievements_menu/achievements_menu.gd" id="1_ksqd7"]
 [ext_resource type="Theme" uid="uid://ddwm0nvjciyk4" path="res://assets/global_theme.tres" id="1_xi3c6"]
 
-[node name="AchievementsMenu" type="Control"]
+[node name="AchievementsMenu" type="Control" unique_id=314009142]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,18 +13,18 @@ grow_vertical = 2
 theme = ExtResource("1_xi3c6")
 script = ExtResource("1_ksqd7")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1313825890]
 layout_mode = 0
 offset_left = 160.0
 offset_top = 345.0
 offset_right = 823.0
 offset_bottom = 569.0
 
-[node name="AchievementPresentersContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="AchievementPresentersContainer" type="VBoxContainer" parent="CenterContainer" unique_id=225227734]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="GotoMainManuButton" type="Button" parent="."]
+[node name="GotoMainManuButton" type="Button" parent="." unique_id=456334352]
 layout_mode = 0
 offset_left = 1516.0
 offset_top = 891.0

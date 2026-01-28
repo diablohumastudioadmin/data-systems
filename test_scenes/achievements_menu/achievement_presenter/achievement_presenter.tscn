@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://u1r7eyb38s4c"]
+[gd_scene format=3 uid="uid://u1r7eyb38s4c"]
 
 [ext_resource type="Theme" uid="uid://ddwm0nvjciyk4" path="res://assets/global_theme.tres" id="1_a4cwc"]
 [ext_resource type="Script" uid="uid://bpche6cjolr1p" path="res://test_scenes/achievements_menu/achievement_presenter/achievement_presenter.gd" id="2_htx0p"]
@@ -13,17 +13,17 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\">
 "
 base_scale = 4.0
 
-[node name="AchievementPresenter" type="HBoxContainer"]
+[node name="AchievementPresenter" type="HBoxContainer" unique_id=483826185]
 theme = ExtResource("1_a4cwc")
 script = ExtResource("2_htx0p")
 
-[node name="Name" type="Label" parent="."]
+[node name="Name" type="Label" parent="." unique_id=1150793862]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Placeholder Achievement"
 
-[node name="Achieved" type="CheckButton" parent="."]
+[node name="Achieved" type="CheckButton" parent="." unique_id=1579475395]
 layout_mode = 2
 theme_override_icons/checked = SubResource("DPITexture_xi3c6")
 theme_override_icons/unchecked = SubResource("DPITexture_rhnm3")
