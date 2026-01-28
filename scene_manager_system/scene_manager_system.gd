@@ -1,3 +1,4 @@
+@tool
 extends Node
 
 func change_scene(new_packed_scene: PackedScene, arguments: Dictionary = {}, current_scene: Node = get_tree().current_scene, is_same_name: bool = false) -> void:
