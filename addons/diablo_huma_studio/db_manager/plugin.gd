@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-var tool_submenu_name: String = "MasterDBCreator" 
+var tool_submenu_name: String = "DataBase Manager" 
 var tool_submenu_popup: PopupMenu = load("uid://cmq3nc5ag8qc7").new()
 var export_plugin: EditorExportPlugin = load("uid://dvscre0wbxii2").new()
 var stand_alone_singleton_name: String = "StandAloneDBCreator"
@@ -22,12 +22,12 @@ func _disable_plugin() -> void:
 func _enter_tree() -> void:
 	add_export_plugin(export_plugin)
 	menu.add_submenu_node_item(tool_submenu_name, tool_submenu_popup)
-	add_tool_submenu_item("DHS_DB_Manager", menu)
+	add_tool_submenu_item("Diablo Huma Studio", menu)
 
 func _exit_tree() -> void:
 	remove_export_plugin(export_plugin)
 	menu.clear(true)
-	remove_tool_menu_item("DHS_DB_Manager")
+	remove_tool_menu_item("Diablo Huma Studio")
 
 static func uid_to_path(uid_string: String) -> String:
 	var id: int = ResourceUID.text_to_id(uid_string)
