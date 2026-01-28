@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwiqpoedqo816"]
+[gd_scene format=3 uid="uid://cwiqpoedqo816"]
 
 [ext_resource type="Theme" uid="uid://ddwm0nvjciyk4" path="res://assets/global_theme.tres" id="1_12tlg"]
 [ext_resource type="Script" uid="uid://dhy73htdp5mqw" path="res://test_scenes/level_menu/level_menu.gd" id="2_dm16c"]
 
-[node name="LevelMenu" type="Control"]
+[node name="LevelMenu" type="Control" unique_id=1651811148]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ grow_vertical = 2
 theme = ExtResource("1_12tlg")
 script = ExtResource("2_dm16c")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1612934921]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -21,12 +21,12 @@ offset_left = 110.0
 offset_right = 701.0
 grow_vertical = 2
 
-[node name="GotoLevelButtonsContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="GotoLevelButtonsContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1929497199]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="GoToMainMenuButton" type="Button" parent="."]
+[node name="GoToMainMenuButton" type="Button" parent="." unique_id=374914461]
 layout_mode = 0
 offset_left = 1594.0
 offset_top = 882.0
