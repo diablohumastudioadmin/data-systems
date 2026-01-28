@@ -12,6 +12,10 @@ static func _generate_data_folder(type_name: String) -> Error:
 	var dir: DirAccess = DirAccess.open(DBManagerWindow.BRAND_PATH + DBManagerWindow.PLUGIN_FOLDER_NAME + DBManagerWindow.DATA_FOLDER_NAME)
 	var err: Error = dir.make_dir(type_name)
 	if err != OK: return err
+
+	if Engine.is_editor_hint():
+		EditorInterface.get_resource_filesystem().scan()
+
 	return OK
 
 static func _generate_dt_script_text(type_name: String, properties: Array[Dictionary]) -> String:
