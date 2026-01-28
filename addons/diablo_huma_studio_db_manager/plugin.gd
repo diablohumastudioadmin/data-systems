@@ -1,42 +1,33 @@
 @tool
 extends EditorPlugin
 
-var tool_submenus: Dictionary[String, PopupMenu] = {
-	"MasterDBCreator" : load("uid://cmq3nc5ag8qc7").new()
-}
-var export_plugins: Array[EditorExportPlugin] = [
-	load("uid://dvscre0wbxii2").new()
-]
-var singletons: Dictionary[String, String] = {
-	"MasterDBCreatorSingleton": "uid://y7xt2blhe5nu"
-}
+var tool_submenu_name: String = "MasterDBCreator" 
+var tool_submenu_popup: PopupMenu = load("uid://cmq3nc5ag8qc7").new()
+var export_plugin: EditorExportPlugin = load("uid://dvscre0wbxii2").new()
+var stand_alone_singleton_name: String = "StandAloneDBCreator"
+var stand_alone_singleton_path: String = "uid://y7xt2blhe5nu"
+var db_manager_singleton_name: String = "DBManager"
+var db_manager_singleton_path: String = "uid://dvf42gydx8g0q"
 
 var menu: PopupMenu = PopupMenu.new()
 
 func _enable_plugin() -> void:
-	# Add autoloads here.
-	pass
+	add_autoload_singleton(stand_alone_singleton_name, uid_to_path(stand_alone_singleton_path))
+	add_autoload_singleton(db_manager_singleton_name, uid_to_path(db_manager_singleton_path))
 
 func _disable_plugin() -> void:
-	# Remove autoloads here.
-	pass
+	remove_autoload_singleton(stand_alone_singleton_name)
+	remove_autoload_singleton(db_manager_singleton_name)
 
 func _enter_tree() -> void:
-	for export_plugin in export_plugins:
-		add_export_plugin(export_plugin)
-	for singleton in singletons:
-		add_autoload_singleton(singleton, uid_to_path(singletons[singleton]))
-	for tool_submenu_key in tool_submenus:
-		menu.add_submenu_node_item(tool_submenu_key, tool_submenus[tool_submenu_key])
-	add_tool_submenu_item("DiabloHumaStudio", menu)
+	add_export_plugin(export_plugin)
+	menu.add_submenu_node_item(tool_submenu_name, tool_submenu_popup)
+	add_tool_submenu_item("DHS_DB_Manager", menu)
 
 func _exit_tree() -> void:
-	for export_plugin in export_plugins:
-		remove_export_plugin(export_plugin)
-	for singleton in singletons:
-		remove_autoload_singleton(singleton)
+	remove_export_plugin(export_plugin)
 	menu.clear(true)
-	remove_tool_menu_item("DiabloHumaStudio")
+	remove_tool_menu_item("DHS_DB_Manager")
 
 static func uid_to_path(uid_string: String) -> String:
 	var id: int = ResourceUID.text_to_id(uid_string)
