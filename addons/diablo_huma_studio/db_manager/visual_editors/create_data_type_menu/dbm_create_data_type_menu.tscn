@@ -92,5 +92,12 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Add DataType"
 
+[node name="GoBackButton" type="Button" parent="MarginContainer" unique_id=793325933]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Go Back"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PropertiesHeader/AddPropertyButton" to="." method="_on_add_property_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/AddDataTypeButton" to="." method="_on_add_data_type_button_pressed"]
+[connection signal="pressed" from="MarginContainer/GoBackButton" to="." method="_on_go_back_button_pressed"]

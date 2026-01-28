@@ -6,13 +6,9 @@
 [node name="MainMenu" type="Control" unique_id=1800616730]
 custom_minimum_size = Vector2(1000, 800)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -920.0
-offset_bottom = -280.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 1000.0
+offset_bottom = 800.0
 theme = ExtResource("1_5tqvs")
 script = ExtResource("2_cpwkb")
 
@@ -31,4 +27,14 @@ layout_mode = 2
 layout_mode = 2
 text = "ADD DATA TYPE"
 
+[node name="CreateDataButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1711994482]
+layout_mode = 2
+text = "ADD DATA"
+
+[node name="ViewDataTableButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=673617491]
+layout_mode = 2
+text = "VIEW DATA TABLE"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CreateDataTypeButton" to="." method="_on_create_data_type_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CreateDataButton" to="." method="_on_create_data_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ViewDataTableButton" to="." method="_on_view_data_table_button_pressed"]

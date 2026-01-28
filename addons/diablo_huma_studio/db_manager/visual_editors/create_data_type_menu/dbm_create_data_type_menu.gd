@@ -2,7 +2,8 @@
 class_name DBMCreateDataTypeMenu
 extends Control
 
-@onready var property_row_scene: PackedScene = load("uid://cpygu4nskpf7o")
+var main_menu_pksc: PackedScene = load("uid://dwucurqrvby08")
+var property_row_scene: PackedScene = load("uid://cpygu4nskpf7o")
 
 var errors: Array[String] = []
 
@@ -66,3 +67,7 @@ func _on_add_data_type_button_pressed() -> void:
 	if result != OK:
 		errors.append("Failed to save file (error code: %d)" % result)
 		_update_errors_display()
+
+
+func _on_go_back_button_pressed() -> void:
+	SceneManagerSystem.change_scene(main_menu_pksc, {}, self)

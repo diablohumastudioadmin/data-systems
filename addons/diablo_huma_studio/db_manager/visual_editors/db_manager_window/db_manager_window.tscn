@@ -10,12 +10,5 @@ size = Vector2i(1000, 800)
 script = ExtResource("1_bn4yv")
 
 [node name="MainMenu" parent="." unique_id=1800616730 instance=ExtResource("2_8bywc")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 1000.0
-offset_bottom = 800.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
