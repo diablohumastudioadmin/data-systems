@@ -17,8 +17,11 @@ func _on_property_row_removed() -> void:
 
 func _validate_all_properties() -> void:
 	errors.clear()
-	var seen_names: Dictionary = {}
 
+	if get_data_type_name().strip_edges().is_empty():
+		errors.append("Class name cannot be empty")
+
+	var seen_names: Dictionary = {}
 	for child in %PropertiesContainer.get_children():
 		if child is DBMPropertyRow:
 			var prop_name: String = child.get_property_name()
@@ -59,4 +62,7 @@ func _on_add_data_type_button_pressed() -> void:
 	_validate_all_properties()
 	if not errors.is_empty():
 		return
-	# TODO: Create the data type file
+	var result: int = DataTypeScriptGenerator.save(get_data_type_name().strip_edges(), get_properties())
+	if result != OK:
+		errors.append("Failed to save file (error code: %d)" % result)
+		_update_errors_display()
