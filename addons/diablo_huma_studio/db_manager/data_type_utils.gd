@@ -56,5 +56,10 @@ static func get_next_id(type_name: String) -> int:
 static func get_data_folder_path(type_name: String) -> String:
 	return DBManagerWindow.BRAND_PATH + DBManagerWindow.PLUGIN_FOLDER_NAME + DBManagerWindow.DATA_FOLDER_NAME + type_name + "/"
 
+static func data_exists(type_name: String, data_name: String) -> bool:
+	var data_folder: String = get_data_folder_path(type_name)
+	var file_name: String = DataTypeGenerator._to_snake_case(type_name) + "_" + str(data_name) + ".tres"
+	return FileAccess.file_exists(data_folder + file_name)
+
 static func get_script_path(type_name: String) -> String:
 	return DBManagerWindow.BRAND_PATH + DBManagerWindow.PLUGIN_FOLDER_NAME + DBManagerWindow.DATA_TYPES_FOLDER_NAME + DataTypeGenerator._to_snake_case(type_name) + ".gd"

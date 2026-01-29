@@ -165,6 +165,15 @@ func _on_save_button_pressed() -> void:
 		_show_error("No data type selected")
 		return
 
+	if "name" in _property_widgets:
+		var name_value: String = str(_get_value_from_widget("name")).strip_edges()
+		if name_value.is_empty():
+			_show_error("Name cannot be blank")
+			return
+		if DataTypeUtils.data_exists(selected_data_type, name_value):
+			_show_error("A record with name '%s' already exists" % name_value)
+			return
+
 	var script_path: String = DataTypeUtils.get_script_path(selected_data_type)
 	var script: GDScript = load(script_path)
 	if script == null:
